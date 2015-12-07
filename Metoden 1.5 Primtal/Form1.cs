@@ -27,23 +27,39 @@ namespace Metoden_1._5_Primtal
             
             int tal = Convert.ToInt32(textBox1.Text);
 
-            if (tal > 0 && tal < 3)
+            if (tal > 3)
             {
-                MessageBox.Show("Talet är ett primtal");
-            }
-            if (tal % 2 == 0)
-            {
-                 MessageBox.Show("Talet är inte ett primtal");
-            }
-            for (int i = 3; i < tal / 2; i++)
-            {
-                if (tal % 1 == 0)
+                if (tal == 2)
                 {
-                     MessageBox.Show("Talet är inte ett primtal");
+                    MessageBox.Show("Talet är ett primtal");
                 }
-                 MessageBox.Show("Talet är ett primtal");
+                else
+                {
+                    MessageBox.Show("Talet är inte ett primtal");
+                }
+
+            }
+            
+            else 
+
+                if (tal % 2 == 0)
+                {
+                    MessageBox.Show("Talet är inte ett primtal");
+                }
+                else
+                {
+                    for (int i = 3; tal % i != 0; i += 2)
+                        ;
+                    
+                        if (tal % 1 == 0)
+                        {
+                            MessageBox.Show("Talet är inte ett primtal");
+                        }
+                        MessageBox.Show("Talet är ett primtal");
+                    }
+                }
             }
         }
 
-    }
-}
+    
+
