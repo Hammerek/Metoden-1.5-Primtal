@@ -18,16 +18,16 @@ namespace Metoden_1._5_Primtal
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {     
-            primtal(); 
+        {
+            primtal();
         }
 
         private void primtal()
         {
-            
+
             int tal = Convert.ToInt32(textBox1.Text);
 
-            if (tal > 3)
+            if (tal < 3)
             {
                 if (tal == 2)
                 {
@@ -39,27 +39,30 @@ namespace Metoden_1._5_Primtal
                 }
 
             }
-            
-            else 
-
+            else
+            {
                 if (tal % 2 == 0)
                 {
                     MessageBox.Show("Talet är inte ett primtal");
                 }
                 else
                 {
-                    for (int i = 3; tal % i != 0; i += 2)
+                    int i;
+                    for (i = 3; tal % i != 0; i += 2)
                         ;
-                    
-                        if (tal % 1 == 0)
-                        {
-                            MessageBox.Show("Talet är inte ett primtal");
-                        }
+
+                    if (i == tal)
+                    {
+                        MessageBox.Show("Talet är inte ett primtal");
+                    }
+                    else
+                    {
                         MessageBox.Show("Talet är ett primtal");
                     }
                 }
             }
         }
-
+    }
+}
     
 
