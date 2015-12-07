@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Metoden_1._5_Primtal
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form //Kamil EEDAT14A
     {
         public Form1()
         {
@@ -25,17 +25,32 @@ namespace Metoden_1._5_Primtal
         private void primtal()
         {
 
-            int tal = Convert.ToInt32(textBox1.Text);
+            int tal = Convert.ToInt32(textBox1.Text); //variabel
 
+             bool x = prime(tal);
+
+            if (x)
+            {
+                MessageBox.Show("Talet är ett primtal.");
+            }
+            else 
+            {
+                MessageBox.Show("Talet är inte ett primtal.");
+            }
+          
+        }
+
+        private static bool prime(int tal)
+        {
             if (tal < 3)
             {
                 if (tal == 2)
                 {
-                    MessageBox.Show("Talet är ett primtal");
+                    return true;
                 }
                 else
                 {
-                    MessageBox.Show("Talet är inte ett primtal");
+                    return false;
                 }
 
             }
@@ -43,7 +58,7 @@ namespace Metoden_1._5_Primtal
             {
                 if (tal % 2 == 0)
                 {
-                    MessageBox.Show("Talet är inte ett primtal");
+                    return false;
                 }
                 else
                 {
@@ -53,11 +68,11 @@ namespace Metoden_1._5_Primtal
 
                     if (i == tal)
                     {
-                        MessageBox.Show("Talet är inte ett primtal");
+                        return true;
                     }
                     else
                     {
-                        MessageBox.Show("Talet är ett primtal");
+                        return false;
                     }
                 }
             }
