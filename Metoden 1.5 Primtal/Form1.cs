@@ -19,54 +19,51 @@ namespace Metoden_1._5_Primtal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            primtal();
+            primtal(); //metod
         }
 
-        private void primtal()
+        private void primtal() //metod
         {
-
             int tal = Convert.ToInt32(textBox1.Text); //variabel
+            bool x = prime(tal);
 
-             bool x = prime(tal);
-
-            if (x)
+            if (x)//om x (tal) är sant då talet är ett primtal
             {
                 MessageBox.Show("Talet är ett primtal.");
             }
-            else 
+            else //om x (tal) är falskt då talet är inte ett primtal
             {
                 MessageBox.Show("Talet är inte ett primtal.");
             }
-          
         }
 
-        private static bool prime(int tal)
+        private static bool prime(int tal) //bool metoden 
         {
-            if (tal < 3)
+            if (tal < 3) //om talet är mindre än 3
             {
-                if (tal == 2)
+                if (tal == 2) // om tal är lika med 2 
                 {
-                    return true;
+                    return true; //returnera sant 
                 }
                 else
                 {
-                    return false;
+                    return false; //returnera falskt
                 }
 
             }
-            else
+            else //annars
             {
-                if (tal % 2 == 0)
+                if (tal % 2 == 0) //om talet är jämnt
                 {
-                    return false;
+                    return false; //returnera falskt
                 }
                 else
                 {
                     int i;
-                    for (i = 3; tal % i != 0; i += 2)
+                    for (i = 3; tal % i != 0; i += 2) //for loop som räknar från 3
                         ;
 
-                    if (i == tal)
+                    if (i == tal) //om i är lika med tal då talet är ett primtal
                     {
                         return true;
                     }
